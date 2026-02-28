@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Riyaz Ahmed N | Portfolio</title>
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav>
+        <div class="left">
+            <a href="/">Riyaz Ahmed N</a>
+        </div>
+        <div class="right">
+            <a href="http://github.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+            </a>
+               <a href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
+               <a href="mailto:riyazz.ahmedd04@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!--SECTION 1: Hero-->
+        <section class="hero-section">
+            <div class="text">
+                <h2>Hi, I'm Riyaz Ahmed N 👋</h2>
+                <p>I am passionate Full Stack Developer with hands-on experience in the MERN stack. I have stong knowledge of both front-end and back-end development and enjoy building responsive, scalabe, and user-friendly web applications. I am continuously learning and improving my skills to stay aligned with modern web technologies and industry best practices.  </p>
+                <div class="links">
+                    <a href="#skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span>
+                    </a>
+
+                     <a href="#project">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <span>Project</span>
+                    </a>
+
+                     <a href="#contact">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="headshot"></div>
+        </section>
+
+        <!--SECTION 2: Skills-->
+        <section id="skills" class="skills-section">
+            <h2>Skills</h2>
+            <div class="text">
+                I specialize in the MERN stack  with strong knowledge of both front-end and back-end development. I build responsive, user-friendly interfaces and develop secure, scalable APIs. I focus on writing clean, maintainable code and continuously improving my technical skills.
+            </div>
+             
+            <div class="cells">
+                <div class="cell">
+                    <img src="images/html.svg">
+                    <span>HTML</span>
+                </div>
+                <div class="cell">
+                    <img src="images/css.svg">
+                    <span>CSS</span>
+                </div>
+                <div class="cell">
+                    <img src="images/javascript.svg">
+                    <span>JavaScript</span>
+                </div>
+                <div class="cell">
+                    <img src="images/nodejs.svg">
+                    <span>Node.js</span>
+                </div>
+                <div class="cell">
+                    <img src="images/react.svg">
+                    <span>React.js</span>
+                </div>
+                <div class="cell">
+                    <img src="images/mongodb.svg">
+                    <span>MongoDB</span>
+                </div>
+            </div>
+        </section>
+
+        <!--SECTION 3: Project-->
+        <section id="project" class="project-section">
+            <h2>Projects</h2>
+
+            
+            <div class="project-card">
+                
+                <a href="https://track-and-spend1.vercel.app/" target="_blank">
+                    <div class="image-container">
+                        <img src="images/track&Spend.svg" alt="track&spend">
+                        <div class="overlay">
+                            <span>View Live</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="project-info">
+                     <h3>Track&Spend</h3>
+                    <p>A simple and intuitive expense tracking application that helps users record, categorize, and manage their daily spending. Built as a full-stack project to demonstrate skills in frontend, backend, and database integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--SECTION 4: Contact-->
+        <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+
+            <div class="group">
+                <div class="text">
+
+                </div>
+
+                <form id="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                     <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                     <label for="message">Message</label>
+                     <textarea id="message" name="message" cols="30" rows="10" required></textarea>
+
+                     <button type="submit">Send Message</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+     <script>
+     (function (){
+            emailjs.init("2EfBn8pstE47qPyND");
+        })();
+
+           document.getElementById("contact-form").addEventListener("submit", function(event){
+              event.preventDefault();
+
+             emailjs.sendForm("service_p55zo1v", "template_wkecwfl", this)
+             .then(function() {
+            alert("Message Sent Successfully!");
+            document.getElementById("contact-form").reset();
+          }, function(error) {
+           alert("Failed to send message.");
+          });
+       });
+      </script>
+</body>
+</html>
